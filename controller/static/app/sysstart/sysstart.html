@@ -1,0 +1,90 @@
+<div class="ui padded grid">
+<div class="row">
+    <div class="column">
+        <div class="ui segment centered page">
+            <h1>Start Cluster...</h1>
+            <h4>Cluster status</h4>
+            <p>查看节点情况
+				<a ui-sref="dashboard.nodes" ui-sref-active="active" class="title item">
+					<i class="sitemap icon"></i> 系统节点
+				</a>
+			</p>
+            <h4>Start Step</h4>
+            <p>一. 系统下载:<a href="http://192.168.84.192:12580/osinstall/ubuntu14.04_with_docker_image.iso" target="_black">Ubuntu 14.04操作系统</a></p>
+            <p>一. 部署参照:<a href="http://192.168.84.172/pages/viewpage.action?pageId=5275656" target="_black">Docker化平台部署方案1.0版本</a>
+				<ul class="childpages-macro">
+					<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275659">1.方案整体说明</a></li>
+					<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275662">2.操作系统安装</a></li>
+					<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275719">3.执行宿主机系统环境初始化脚本</a></li>
+					<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275722">4.搭建自动化运维服务器</a>
+					<ul class="childpages-macro">
+							<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275724">4.1
+									docker运维系统准备</a></li>
+							<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275729">4.2
+									配置集群时间同步服务</a></li>
+						</ul></li>
+					<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275731">5.系统部署</a>
+					<ul class="childpages-macro">
+							<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275734">5.1准备工作</a>
+							<ul class="childpages-macro">
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275736">5.1.1
+											服务器分组</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275901">5.1.2
+											获取镜像包及配置各集群IP列表</a></li>
+								</ul></li>
+							<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275740">5.2
+									基础组件部署</a>
+							<ul class="childpages-macro">
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275742">5.2.1
+											zookeeper集群部署</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275745">5.2.2
+											amq_with_mysql部署</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275747">5.2.3
+											ElasticSearch+Esql部署</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275749">5.2.4
+											ispp-dfs+ fastdfs部署</a></li>
+								</ul></li>
+							<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275751">5.3
+									skynet部署</a>
+							<ul class="childpages-macro">
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275816">5.3.1
+											skynet框架部署</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275753">5.3.2
+											引擎服务安装</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275755">5.3.3
+											ispp-worker安装</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275757">5.3.4
+											听音控件服务端安装</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275761">5.3.5
+											引擎服务冒烟测试</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275764">5.3.6
+											ispp-worker冒烟测试</a></li>
+								</ul></li>
+							<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275766">5.4
+									运维组件部署</a>
+							<ul class="childpages-macro">
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275768">5.4.1
+											elk部署</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275771">5.4.2
+											zabbix_with_tpl部署</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275773">5.4.3
+											容器管理系统部署</a></li>
+								</ul></li>
+							<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275775">5.5
+									其他（可选）</a>
+							<ul class="childpages-macro">
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275777">5.5.1
+											mysql部署</a></li>
+									<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275779">5.5.2
+											tomcat部署</a></li>
+								</ul></li>
+						</ul></li>
+					<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275781">6. 集群健康检查</a></li>
+					<li><a href="http://192.168.84.172/pages/viewpage.action?pageId=5275783">7.
+							填写项目部署情况表</a></li>
+				</ul>
+			</p>
+        </div>
+    </div>
+</div>
+</div>

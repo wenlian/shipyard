@@ -1,32 +1,38 @@
 <div class="ui fixed inverted main menu">
 <div class="container">
-    <a ui-sref="dashboard.containers" class="title item" id="logo">
-        shipyard
+    <a ui-sref="dashboard.sysstart" class="title item" id="logo">
+        集群管理系统
     </a>
+    <a ui-sref="dashboard.sysstart" ui-sref-active="active" class="title item">
+        <i class="settings icon"></i> 系统部署
+    </a>
+    <!--a ui-sref="dashboard.skynet" ui-sref-active="active" class="title item">
+        <i class="random icon"></i> Skynet
+    </a-->
     <a ui-sref="dashboard.containers" ui-sref-active="active" class="title item">
-        <i class="grid layout icon"></i> Containers
+        <i class="grid layout icon"></i> 容器
     </a>
     <a ui-sref="dashboard.images" ui-sref-active="active" class="title item">
-        <i class="disk outline icon"></i> Images
+        <i class="disk outline icon"></i> 镜像
     </a>
     <a ui-sref="dashboard.nodes" ui-sref-active="active" class="title item">
-        <i class="sitemap icon"></i> Nodes
+        <i class="sitemap icon"></i> 节点
     </a>
     <a ui-sref="dashboard.registry" ui-sref-active="active" class="title item">
-        <i class="fork icon"></i> Registries
+        <i class="fork icon"></i> 镜像仓库
     </a>
     <a ui-sref="dashboard.accounts" ui-sref-active="active" class="title item">
-        <i class="user icon"></i> Accounts
+        <i class="user icon"></i> 账号管理
     </a>
     <a ui-sref="dashboard.events" ui-sref-active="active" class="title item">
-        <i class="browser icon"></i> Events
+        <i class="browser icon"></i> 操作记录
     </a>
     <div class="ui right inverted menu">
         <div class="ui item">
             <div class="ui dropdown">
                 {{ username }} <i class="dropdown icon"></i>
                 <div class="menu">
-                    <div ui-sref="logout" class="item"><i class="sign out icon"></i>Logout</div>
+                    <div ui-sref="logout" class="item"><i class="sign out icon"></i>退出</div>
                 </div>
             </div>
         </div>

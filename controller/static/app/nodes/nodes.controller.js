@@ -10,7 +10,10 @@
             var vm = this;
             vm.nodes = nodes;
             vm.refresh = refresh;
+			vm.zookeeper = zookeeper;//跳转到zookeeper界面
+            vm.addNode = addNode;
             vm.removeNode = removeNode;
+            vm.showAddNodeDialog = showAddNodeDialog;
             vm.showRemoveNodeDialog = showRemoveNodeDialog;
             vm.selectedNode = null;
 
@@ -28,7 +31,24 @@
                     });
                 vm.error = "";
             }
+			
+			//zookeeper信息
+			function zookeeper() {
+				window.location.href='http://192.168.84.168:9090/home?zkPath=/swarm/docker/swarm/nodes';
+			}
+			
+			function showAddNodeDialog(){
+				 $('#add-node-modal').modal('show');
+			}
             
+			function addNode() {
+                alert("Add Node Test...");
+            }
+			
+			function showRemoveNodeDialog(){
+				$('#remove-node-modal').modal('show');
+			}
+			
             function removeNode() {
                 NodesService.removeNode(vm.selectedNode)
                     .then(function(data) {

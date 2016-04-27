@@ -1,17 +1,17 @@
 <div id="remove-modal" class="ui small modal transition">
     <i class="close icon"></i>
     <div class="header">
-        Remove Image: {{ vm.selectedImage.Id.substring(0,12) }}
+        删除镜像 : {{ vm.selectedImage.Id.substring(0,12) }}
     </div>
     <div class="content">
-        <p>Are you sure you want to remove this image?</p>
+        <p>是否确定删除此镜像?</p>
     </div>
     <div class="actions">
         <div class="ui negative button">
-            No
+            否
         </div>
         <div ng-click="vm.removeImage()" class="ui positive right labeled icon button">
-            Yes
+            是
             <i class="checkmark icon"></i>
         </div>
     </div>
@@ -20,7 +20,7 @@
 <div id="pull-modal" class="ui small modal transition">
     <i class="close icon"></i>
     <div class="header">
-        Pull Image
+        下载镜像
     </div>
     <div class="content">
         <div class="ui form">
@@ -32,10 +32,10 @@
     </div>
     <div class="actions">
         <div class="ui negative button">
-            No
+            否
         </div>
         <div ng-click="vm.pullImage()" class="ui positive right labeled icon button">
-            Yes
+            是
             <i class="checkmark icon"></i>
         </div>
     </div>
@@ -45,10 +45,10 @@
 <div class="two column row" ng-hide="vm.pulling">
     <div class="left floated column">
         <div ng-click="vm.refresh()" class="ui small blue labeled icon button">
-            <i class="refresh icon"></i> Refresh
+            <i class="refresh icon"></i> 刷新
         </div>
         <div ng-click="vm.showPullImageDialog()" class="ui small green labeled icon button">
-            <i class="download icon"></i> Pull Image
+            <i class="download icon"></i> 下载镜像
         </div>
     </div>
     <div class="right aligned right floated column">
@@ -88,9 +88,9 @@
             <i class="info icon"></i>
             <div class="content">
                 <div class="header">
-                    Images
+                    镜像
                 </div>
-                <p>There are no images in the cluster.</p>
+                <p>集群中没有镜像.</p>
             </div>
         </div>
     </div>
@@ -101,12 +101,12 @@
         <table class="ui sortable celled table">
             <thead>
                 <tr>
-                    <th>Names</th>
-                    <th>ID</th>
-                    <th>Created</th>
-                    <th>Node</th>
-                    <th>Virtual Size</th>
-                    <th></th>
+                    <th>镜像名</th>
+                    <th>镜像ID</th>
+                    <th>创建时间</th>
+                    <th>集群节点</th>
+                    <th>虚拟数据大小</th>
+                    <th>镜像操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -115,7 +115,7 @@
                     <td>{{i.Id.substring(0,12)}}</td>
                     <td>{{i.Created * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}</td>
                     <td>{{i.Engine.Name}}</td>
-                    <td ng-attr-data-sort-value="{{i.VirtualSize}}">{{i.VirtualSize / 1048576 | number:2}} MB</td>
+                    <td>{{i.VirtualSize / 1048576 | number:2}} MB</td>
                     <td class="collapsing">
                         <div ng-click="vm.showRemoveImageDialog(i)" class="compact ui icon button red">
                             <i class="trash icon"></i>
@@ -133,9 +133,9 @@
             <i class="info icon"></i>
             <div class="content">
                 <div class="header">
-                    Images
+                    镜像
                 </div>
-                <p>No images matched your filter query</p>
+                <p>未找到匹配镜像</p>
             </div>
         </div>
     </div>

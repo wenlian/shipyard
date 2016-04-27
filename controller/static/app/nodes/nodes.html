@@ -2,12 +2,56 @@
 <div class="two column row">
     <div class="left floated column">
         <div ng-click="vm.refresh()" class="ui small blue labeled icon button">
-            <i class="refresh icon"></i> Refresh
+            <i class="refresh icon"></i> 刷新
+        </div>
+        <div ng-click="vm.showAddNodeDialog()" class="ui small yellow labeled icon button">
+            <i class="add icon"></i> 添加节点
+        </div>
+        <div ng-click="vm.zookeeper()" class="ui small green labeled icon button">
+            <i class="options icon"></i> ZK集群信息
         </div>
     </div>
     <div class="right aligned right floated column">
         <div class="ui small icon input">
             <input ng-model="tableFilter" placeholder="Search nodes..." reset-field/>
+        </div>
+    </div>
+</div>
+
+<div id="add-node-modal" class="ui small modal transition">
+    <i class="close icon"></i>
+    <div class="header">
+        添加节点:
+    </div>
+    <div class="content">
+        Test Add Node......
+    </div>
+    <div class="actions">
+        <div class="ui negative button">
+            取消
+        </div>
+        <div ng-click="vm.addNode()" class="ui positive right labeled icon button">
+            添加
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+
+<div id="remove-node-modal" class="ui small modal transition">
+    <i class="close icon"></i>
+    <div class="header">
+        删除节点:
+    </div>
+    <div class="content">
+        确定删除节点{{n.name}}？
+    </div>
+    <div class="actions">
+        <div class="ui negative button">
+            取消
+        </div>
+        <div ng-click="vm.removeNode()" class="ui positive right labeled icon red button">
+            删除
+            <i class="checkmark icon"></i>
         </div>
     </div>
 </div>
@@ -27,9 +71,9 @@
             <i class="info icon"></i>
             <div class="content">
                 <div class="header">
-                    Nodes
+                    集群节点
                 </div>
-                <p>There are no cluster nodes.</p>
+                <p>没有集群节点.</p>
             </div>
         </div>
     </div>
@@ -40,12 +84,13 @@
         <table class="ui sortable celled table" ng-show="vm.nodes">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Containers</th>
-                    <th>Reserved CPUs</th>
-                    <th>Reserved Memory</th>
-                    <th>Labels</th>
+                    <th>节点名称</th>
+                    <th>节点地址</th>
+                    <th>运行容器数</th>
+                    <th>CPU用量</th>
+                    <th>内存用量</th>
+                    <th>标签</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,6 +101,14 @@
                     <td>{{n.reserved_cpus}}</td>
                     <td>{{n.reserved_memory}}</td>
                     <td>{{n.labels.join(', ')}}</td>
+					<td>
+						<div ng-click="vm.enterNode()" class="compact ui icon button gray">
+							<i class="setting icon"></i>
+						</div>
+						<div ng-click="vm.showRemoveNodeDialog()" class="compact ui icon button red">
+							<i class="trash icon"></i>
+						</div>
+					</td>
                 </tr>
             </tbody>
         </table>
@@ -68,9 +121,9 @@
             <i class="info icon"></i>
             <div class="content">
                 <div class="header">
-                    Nodes
+                    集群节点
                 </div>
-                <p>No nodes matched your filter query</p>
+                <p>未找到匹配打节点。</p>
             </div>
         </div>
     </div>
